@@ -1,31 +1,12 @@
 let tree
 tree = new Tree();
-function setup() {
- 
-  tree = new Tree();
 
-  tree.addvalue(5);
-}
 
 function Node(value) {
   this.value = value;
   this.left = null;
   this.right = null;
 }
-// i just need a referance to the root if i can access the root i can access any thing
-function Tree() {
-  this.root = null;
-}
-
-Tree.prototype.addvalue = function(value) {
-    let n = new Node(value)
-  if (this.root == null) {
-    this.root = n;
-  } else{
-      this.root.addNode(n)
-  }
-};
-
 Node.prototype.addNode = function(n){
     
     if (n.value>this.value){
@@ -65,6 +46,21 @@ Node.prototype.search= function(val) {
     }
 }
 
+// i just need a referance to the root if i can access the root i can access any thing
+function Tree() {
+  this.root = null;
+}
+
+Tree.prototype.addvalue = function(value) {
+    let n = new Node(value)
+  if (this.root == null) {
+    this.root = n;
+  } else{
+      this.root.addNode(n)
+  }
+};
+
+
 Tree.prototype.traverse = function() {
     this.root.visit()
 }
@@ -74,7 +70,11 @@ Tree.prototype.search= function(val){
     console.log(really)
 }
 
+Tree.prototype.delete = function(val){
+    this.root.search
+}
 
+////////////////////////////////////////////////////////////////
 tree.addvalue(4)
 tree.addvalue(2)
 tree.addvalue(6)
