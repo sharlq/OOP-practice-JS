@@ -18,6 +18,12 @@ class Tree{
     search(val){
         return this.root.search(val)
     }
+    delete(val){
+        this.root.delete(val)
+    }
+    remove(value){
+        this.root = this.root.removeNode( this.root,value)
+    }
 }
 
 
@@ -31,4 +37,8 @@ tree.addValue(7)
 tree.addValue(3)
 
 tree.traverse()
-console.log(tree.search(3))
+//console.log(tree.search(5))
+tree.remove(5)
+console.log("after")
+tree.traverse()
+console.log(tree)
